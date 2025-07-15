@@ -56,9 +56,8 @@ obs: caso de algum problema ao rodar as migrations pode entrar dentro do contain
 docker exec -it laravel_app bash
 ```
 
-<h2>Atenção</h2>
-Caso de algum problema em seu ambiente por causa do Linux é sempre bom da aquela permissão 
-problemas com permissão :
+<h2>⚠️ Atenção ⚠️ </h2>
+Se estiver utilizando Linux, pode ser necessário ajustar as permissões das pastas storage e bootstrap/cache:
 
 ```bash
 chmod -R 777 storage bootstrap/cache
@@ -79,7 +78,7 @@ sudo chmod -R 755 storage bootstrap/cache
 <img width="1762" height="830" alt="image" src="https://github.com/user-attachments/assets/73fc3500-eecf-45d4-bc45-92a34bddc079" />
 
 
-📌 Autor: Rafael Zangado | 🛠️ Projeto: VochTechTeste | 🌱 Tecnologia: Laravel 10
+📌 Autor: Rafael Zangado
 
 
 
