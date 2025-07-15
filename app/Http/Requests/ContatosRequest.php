@@ -20,4 +20,11 @@ class ContatosRequest extends FormRequest
             'telefone' => 'nullable|string|max:20',
         ];
     }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'telefone' => preg_replace('/\D/', '', $this->telefone),
+        ]);
+    }
 }

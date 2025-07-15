@@ -4,7 +4,7 @@
 
 @section('tela')
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="display-5">Cadastro de Contatos</h1>
+        <h1 class="display-5">Editar "{{ $contato->nome }} "</h1>
         <a class="btn btn-secondary" href="{{ route('contatos.index') }}">
             <i class="bi bi-arrow-clockwise"></i> Cancelar
         </a>
@@ -24,7 +24,8 @@
             </div>
             <div class="mb-3">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="telefone" name="telefone" value="{{ $contato->telefone }}" placeholder="(00) 00000-0000">
+                <input type="text" class="form-control" id="telefone" name="telefone" 
+                value="{{ formatarTelefone($contato->telefone) }}" placeholder="(00) 00000-0000">
             </div>
             <div class="d-grid gap-2 col-6 mx-auto">
                 <button type="submit" class="btn btn-success btn-lg"><i class="bi bi-floppy"></i> Salvar</button>

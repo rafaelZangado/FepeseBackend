@@ -27,7 +27,7 @@
                         
                         <td>{{ $value->nome }}</td>
                         <td>{{ $value->email }}</td>
-                        <td>{{ $value->telefone }}</td>
+                        <td>{{ formatarTelefone($value->telefone) }}</td>
                         <td>
                             <a href="{{ route('contatos.edit', $value->id) }}" >
                                 <i class="bi bi-pen"></i>
