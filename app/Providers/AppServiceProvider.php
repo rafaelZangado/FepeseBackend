@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Repository\ContatoRepository;
+use App\Repository\ContatoRepositoryInterface;
+use App\Service\ContatoService;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +15,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(
+			ContatoRepositoryInterface::class,
+			ContatoRepository::class
+		);
+		$this->app->singleton(ContatoService::class, function ($app) {
+		return new ContatoService($app->make(ContatoRepositoryInterface::class));
+		});
     }
 
     /**
@@ -19,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Paginator::useBootstrap();
     }
 }
