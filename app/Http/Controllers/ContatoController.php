@@ -19,9 +19,11 @@ class ContatoController extends Controller
      */
     public function index()
     {
-        return view('listarContatos', [
-            'contatos' => $this->contatoService->index()
-        ]);
+        $contatos = $this->contatoService->index();
+        if (request()->wantsJson()) {
+            return response()->json($contatos);
+        }
+        return view('listarContatos', compact('contatos'));
     }
 
 
