@@ -1,5 +1,4 @@
 <h1># Fepese - Aplicação Laravel(CRUD)</h1>
-<lable>Quero agradecer pela oportunidade dada e espero que em breve eu faça parte de time</lable>
 <lable>Essa é uma simples aplicação de cadastrar um contato com os principiso do SOLID  </lable>
 
 
